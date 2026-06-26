@@ -1,0 +1,3605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rainbow Roots Preschool — Where Little Minds Blossom | Kalyan, Maharashtra</title>
+<meta name="description" content="Rainbow Roots Preschool, Daycare & Activity Center in Kalyan. A premium learning environment for children aged 1.5–8 years. Book a school visit today.">
+<meta property="og:title" content="Rainbow Roots Preschool — Where Little Minds Blossom">
+<meta property="og:description" content="A joyful preschool, daycare and activity center where every child learns with confidence, creativity and care. Kalyan, Maharashtra.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFB703">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --yellow: #FFB703;
+  --blue: #8ECAE6;
+  --green: #90BE6D;
+  --orange: #FB8500;
+  --bg: #FFFDF8;
+  --dark: #253238;
+  --dark2: #1a2428;
+  --mid: #4a6572;
+  --light: #f0f4f8;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 12px rgba(37,50,56,0.07);
+  --shadow-md: 0 8px 32px rgba(37,50,56,0.10);
+  --shadow-lg: 0 20px 60px rgba(37,50,56,0.13);
+  --shadow-xl: 0 32px 80px rgba(37,50,56,0.16);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-xl: 48px;
+  --font-head: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ============================================================
+   SCROLL PROGRESS
+   ============================================================ */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, var(--yellow), var(--orange));
+  width: 0%; z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+#loader {
+  position: fixed; inset: 0;
+  background: var(--dark);
+  z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-logo {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+.loader-logo span { color: var(--yellow); }
+.loader-bar {
+  width: 200px; height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 99px; overflow: hidden;
+}
+.loader-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--yellow), var(--orange));
+  border-radius: 99px;
+  animation: loaderAnim 1.6s ease-in-out forwards;
+}
+@keyframes loaderAnim { from { width: 0; } to { width: 100%; } }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1rem 0;
+  transition: var(--transition);
+}
+nav.scrolled {
+  background: rgba(255,253,248,0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(37,50,56,0.06);
+  box-shadow: var(--shadow-sm);
+  padding: 0.7rem 0;
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-head);
+  font-weight: 800; font-size: 1.35rem;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  transition: var(--transition);
+}
+nav.scrolled .nav-logo { color: var(--dark); }
+.nav-logo span { color: var(--yellow); }
+nav.scrolled .nav-logo span { color: var(--orange); }
+
+.nav-links {
+  display: flex; align-items: center; gap: 2rem;
+}
+.nav-links a {
+  font-family: var(--font-head);
+  font-size: 0.875rem; font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  transition: var(--transition);
+}
+nav.scrolled .nav-links a { color: var(--mid); }
+.nav-links a:hover { color: var(--yellow) !important; }
+.nav-cta {
+  background: var(--yellow);
+  color: var(--dark) !important;
+  padding: 0.55rem 1.4rem;
+  border-radius: 99px;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 16px rgba(255,183,3,0.35);
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,183,3,0.45) !important; background: var(--orange) !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--white);
+  border-radius: 2px; transition: var(--transition);
+}
+nav.scrolled .hamburger span { background: var(--dark); }
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: fixed; inset: 0;
+  background: var(--dark);
+  z-index: 998;
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 2rem;
+  opacity: 0; visibility: hidden;
+  transition: var(--transition);
+}
+.mobile-nav.open { opacity: 1; visibility: visible; }
+.mobile-nav a {
+  font-family: var(--font-head);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--white);
+  transition: var(--transition);
+}
+.mobile-nav a:hover { color: var(--yellow); }
+.mobile-nav-close {
+  position: absolute; top: 1.5rem; right: 2rem;
+  font-size: 2rem; color: var(--white); cursor: pointer;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a3a4a 0%, #253238 40%, #1e4060 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  padding: 8rem 2rem 4rem;
+}
+
+/* Animated sky background */
+.hero-sky {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    #0f3460 0%,
+    #16213e 30%,
+    #1a3a5c 60%,
+    #253238 100%
+  );
+}
+.hero-sky::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(142,202,230,0.25) 0%, transparent 70%);
+}
+
+/* Stars */
+.stars {
+  position: absolute; inset: 0; overflow: hidden;
+}
+.star {
+  position: absolute; border-radius: 50%;
+  background: white;
+  animation: twinkle var(--dur) ease-in-out infinite alternate;
+}
+@keyframes twinkle { from { opacity: 0.2; transform: scale(0.8); } to { opacity: 1; transform: scale(1.2); } }
+
+/* Clouds */
+.clouds { position: absolute; inset: 0; overflow: hidden; }
+.cloud {
+  position: absolute;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50px;
+  filter: blur(8px);
+  animation: float-cloud linear infinite;
+}
+@keyframes float-cloud {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* Rainbow arc */
+.rainbow-arc {
+  position: absolute;
+  width: 700px; height: 350px;
+  border-radius: 350px 350px 0 0;
+  top: 5%;
+  left: 50%; transform: translateX(-50%);
+  overflow: hidden;
+  opacity: 0.18;
+  animation: rainbow-pulse 4s ease-in-out infinite;
+}
+@keyframes rainbow-pulse { 0%,100% { opacity: 0.18; } 50% { opacity: 0.28; } }
+.rainbow-arc::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: conic-gradient(
+    from 180deg at 50% 100%,
+    #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000
+  );
+  border-radius: 350px 350px 0 0;
+}
+
+/* Floating shapes */
+.float-shape {
+  position: absolute;
+  border-radius: var(--radius-md);
+  animation: float-shape ease-in-out infinite alternate;
+}
+@keyframes float-shape {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* ABC blocks */
+.abc-block {
+  position: absolute;
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1.5rem; font-weight: 800;
+  animation: float-block ease-in-out infinite alternate;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+@keyframes float-block {
+  from { transform: translateY(0) rotate(-5deg); }
+  to { transform: translateY(-16px) rotate(5deg); }
+}
+
+/* Birds */
+.bird {
+  position: absolute;
+  width: 16px; height: 8px;
+  border-top: 3px solid rgba(255,255,255,0.6);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-radius: 50% 50% 0 0;
+  animation: fly linear infinite;
+}
+@keyframes fly {
+  from { transform: translateX(-50px) translateY(0); }
+  to { transform: translateX(calc(100vw + 50px)) translateY(-40px); }
+}
+
+/* Hero content */
+.hero-content {
+  position: relative; z-index: 10;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,183,3,0.15);
+  border: 1px solid rgba(255,183,3,0.3);
+  backdrop-filter: blur(10px);
+  padding: 0.45rem 1.2rem;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+@keyframes pulse-badge {
+  0%,100% { box-shadow: 0 0 0 0 rgba(255,183,3,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255,183,3,0); }
+}
+.hero-badge-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--yellow);
+  animation: blink 1.5s ease-in-out infinite;
+}
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.hero-badge span {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 700;
+  color: var(--yellow); letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+}
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.7);
+  max-width: 580px; margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+.hero-buttons {
+  display: flex; flex-wrap: wrap;
+  gap: 1rem; justify-content: center;
+  margin-bottom: 3rem;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  color: var(--dark);
+  padding: 0.9rem 2rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-weight: 700; font-size: 0.95rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 8px 28px rgba(255,183,3,0.4);
+  transition: var(--transition);
+  position: relative; overflow: hidden;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(255,183,3,0.5); }
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.3s;
+}
+.btn-primary:hover::after { background: rgba(255,255,255,0.08); }
+
+.btn-ghost {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  padding: 0.9rem 1.8rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-weight: 600; font-size: 0.95rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.18); transform: translateY(-3px); }
+
+.btn-whatsapp {
+  background: #25D366;
+  color: var(--white);
+  padding: 0.9rem 1.8rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-weight: 700; font-size: 0.95rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.35);
+  transition: var(--transition);
+}
+.btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.45); }
+
+/* Hero image showcase */
+.hero-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 700px; margin: 0 auto;
+}
+.hero-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.hero-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+.hero-card-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.hero-card-label {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 600;
+  color: rgba(255,255,255,0.8);
+}
+.hero-card-sub {
+  font-size: 0.7rem; color: rgba(255,255,255,0.5);
+  margin-top: 0.2rem;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.7rem; font-family: var(--font-head);
+  text-transform: uppercase; letter-spacing: 2px;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+}
+
+/* ============================================================
+   SECTION GLOBALS
+   ============================================================ */
+.section { padding: 6rem 2rem; }
+.section-sm { padding: 4rem 2rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.container-lg { max-width: 1400px; margin: 0 auto; }
+
+.section-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-head);
+  font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.section-tag::before {
+  content: '';
+  width: 24px; height: 2px;
+  background: var(--orange); border-radius: 2px;
+}
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 1rem;
+}
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--mid);
+  max-width: 560px;
+  line-height: 1.75;
+}
+.text-center { text-align: center; }
+.text-center .section-sub { margin: 0 auto; }
+.text-center .section-tag { justify-content: center; }
+.text-center .section-tag::before { display: none; }
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   TRUST BAR
+   ============================================================ */
+#trust {
+  background: var(--dark);
+  padding: 2.5rem 2rem;
+  overflow: hidden;
+}
+.trust-inner {
+  max-width: 1200px; margin: 0 auto;
+}
+.trust-label {
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 3px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1.5rem;
+}
+.trust-items {
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+  gap: 0.5rem 2rem;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 99px;
+  transition: var(--transition);
+}
+.trust-item:hover { background: rgba(255,183,3,0.1); border-color: rgba(255,183,3,0.3); }
+.trust-icon { font-size: 1.1rem; }
+.trust-text {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+#about {
+  background: var(--bg);
+  overflow: hidden;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-visual {
+  position: relative;
+}
+.about-main-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #8ECAE6 0%, #FFB703 100%);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+}
+.about-main-img::after {
+  content: '🏫';
+  position: absolute;
+  font-size: 8rem;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  filter: grayscale(0);
+}
+.about-float-card {
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.4rem;
+  box-shadow: var(--shadow-lg);
+  display: flex; align-items: center; gap: 0.8rem;
+  transition: var(--transition);
+}
+.about-float-card:hover { transform: translateY(-4px); }
+.about-float-card.card-1 { bottom: -1.5rem; right: -1.5rem; }
+.about-float-card.card-2 { top: 2rem; left: -2rem; }
+.about-float-icon { font-size: 1.6rem; }
+.about-float-title {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 700; color: var(--dark);
+}
+.about-float-val {
+  font-family: var(--font-head);
+  font-size: 1.2rem; font-weight: 800; color: var(--orange);
+}
+
+.about-values {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  margin-top: 2.5rem;
+}
+.about-value {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(37,50,56,0.06);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.about-value:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.about-value-icon { font-size: 1.4rem; flex-shrink: 0; }
+.about-value-title {
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 700; color: var(--dark);
+}
+.about-value-desc {
+  font-size: 0.78rem; color: var(--mid); line-height: 1.5;
+}
+
+/* ============================================================
+   LEARNING PHILOSOPHY
+   ============================================================ */
+#philosophy {
+  background: var(--dark);
+  overflow: hidden;
+  position: relative;
+}
+#philosophy::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(142,202,230,0.08) 0%, transparent 70%);
+}
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative; z-index: 1;
+}
+.philosophy-steps {
+  display: flex; flex-direction: column; gap: 0;
+}
+.philosophy-step {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.philosophy-step:last-child { border-bottom: none; }
+.philosophy-step:hover .step-num { background: var(--yellow); color: var(--dark); }
+.philosophy-step:hover .step-title { color: var(--yellow); }
+
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1rem; font-weight: 800;
+  color: var(--yellow);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.step-content {}
+.step-title {
+  font-family: var(--font-head);
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--white);
+  transition: var(--transition);
+}
+.step-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.2rem;
+}
+.step-arrow {
+  margin-left: auto;
+  color: rgba(255,255,255,0.2);
+  font-size: 1.2rem;
+}
+
+.philosophy-visual {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.philosophy-circle {
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,183,3,0.2);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  animation: slow-spin 20s linear infinite;
+}
+@keyframes slow-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.philosophy-center {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  animation: slow-spin 20s linear infinite reverse;
+  box-shadow: 0 0 60px rgba(255,183,3,0.3);
+}
+.philosophy-center-icon { font-size: 2.5rem; }
+.philosophy-center-text {
+  font-family: var(--font-head);
+  font-size: 0.6rem; font-weight: 800;
+  color: var(--dark);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.orbit-item {
+  position: absolute;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  font-size: 0.55rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  text-align: center;
+  animation: slow-spin 20s linear infinite reverse;
+  cursor: default;
+}
+.orbit-item span { display: block; font-size: 1.1rem; margin-bottom: 1px; }
+
+/* ============================================================
+   PROGRAMS
+   ============================================================ */
+#programs {
+  background: var(--bg);
+  overflow: hidden;
+}
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.program-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(37,50,56,0.05);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.program-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+.program-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.program-card.yellow::before { background: linear-gradient(90deg, var(--yellow), var(--orange)); }
+.program-card.blue::before { background: linear-gradient(90deg, var(--blue), #5ba3c9); }
+.program-card.green::before { background: linear-gradient(90deg, var(--green), #6a9e3f); }
+.program-card.orange::before { background: linear-gradient(90deg, var(--orange), #e55a00); }
+.program-card.purple::before { background: linear-gradient(90deg, #b388ff, #7c4dff); }
+.program-card.pink::before { background: linear-gradient(90deg, #f48fb1, #e91e63); }
+
+.program-emoji { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+.program-age {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+.program-card.yellow .program-age { background: rgba(255,183,3,0.12); color: #c98100; }
+.program-card.blue .program-age { background: rgba(142,202,230,0.15); color: #2a7fa8; }
+.program-card.green .program-age { background: rgba(144,190,109,0.12); color: #4a7c20; }
+.program-card.orange .program-age { background: rgba(251,133,0,0.12); color: #c96600; }
+.program-card.purple .program-age { background: rgba(179,136,255,0.12); color: #6633cc; }
+.program-card.pink .program-age { background: rgba(244,143,177,0.12); color: #c0175e; }
+
+.program-name {
+  font-family: var(--font-head);
+  font-size: 1.3rem; font-weight: 800;
+  color: var(--dark); margin-bottom: 0.5rem;
+}
+.program-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.2rem; }
+.program-features {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.program-feature {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; color: var(--mid);
+  font-family: var(--font-head); font-weight: 500;
+}
+.program-feature::before { content: '✓'; color: var(--green); font-weight: 800; }
+.program-cta {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 700;
+  color: var(--orange);
+  transition: var(--transition);
+}
+.program-cta:hover { gap: 0.8rem; }
+.program-bg-icon {
+  position: absolute; bottom: 1rem; right: 1rem;
+  font-size: 5rem; opacity: 0.05;
+  pointer-events: none;
+}
+
+/* ============================================================
+   DAILY ROUTINE
+   ============================================================ */
+#routine {
+  background: linear-gradient(135deg, var(--dark) 0%, #1a2e3a 100%);
+  overflow: hidden;
+  position: relative;
+}
+#routine::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(255,183,3,0.06) 0%, transparent 70%);
+}
+.routine-timeline {
+  position: relative;
+  margin-top: 3rem;
+}
+.routine-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--yellow), var(--orange), var(--blue));
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+.routine-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.routine-item:nth-child(even) { flex-direction: row-reverse; }
+.routine-item:nth-child(even) .routine-content { text-align: right; align-items: flex-end; }
+.routine-dot {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 3px solid var(--yellow);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  z-index: 2;
+  flex-shrink: 0;
+  transition: var(--transition);
+  box-shadow: 0 0 20px rgba(255,183,3,0.2);
+}
+.routine-item:hover .routine-dot { background: var(--yellow); box-shadow: 0 0 30px rgba(255,183,3,0.5); }
+.routine-content {
+  width: calc(50% - 40px);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  display: flex; flex-direction: column;
+  transition: var(--transition);
+}
+.routine-item:hover .routine-content { background: rgba(255,255,255,0.08); }
+.routine-time {
+  font-family: var(--font-head);
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--yellow);
+  text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 0.3rem;
+}
+.routine-name {
+  font-family: var(--font-head);
+  font-size: 1rem; font-weight: 700;
+  color: var(--white);
+}
+.routine-desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+
+/* ============================================================
+   TEACHERS
+   ============================================================ */
+#teachers {
+  background: var(--bg);
+  overflow: hidden;
+}
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.teacher-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(37,50,56,0.05);
+  transition: var(--transition);
+  position: relative;
+}
+.teacher-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+.teacher-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.teacher-card:nth-child(1) .teacher-photo { background: linear-gradient(135deg, #FFE0B2, #FFB703); }
+.teacher-card:nth-child(2) .teacher-photo { background: linear-gradient(135deg, #B3E5FC, #8ECAE6); }
+.teacher-card:nth-child(3) .teacher-photo { background: linear-gradient(135deg, #DCEDC8, #90BE6D); }
+
+.teacher-hover-overlay {
+  position: absolute; inset: 0;
+  background: rgba(37,50,56,0.85);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: var(--transition);
+  padding: 1.5rem; text-align: center;
+}
+.teacher-card:hover .teacher-hover-overlay { opacity: 1; }
+.teacher-quote {
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--white);
+  font-style: italic;
+  line-height: 1.6;
+}
+.teacher-quote::before { content: '"'; font-size: 2rem; color: var(--yellow); }
+
+.teacher-info { padding: 1.5rem; }
+.teacher-name {
+  font-family: var(--font-head);
+  font-size: 1.1rem; font-weight: 800; color: var(--dark);
+}
+.teacher-role {
+  font-size: 0.8rem; color: var(--orange); font-weight: 600;
+  font-family: var(--font-head); margin-bottom: 0.7rem;
+}
+.teacher-stats {
+  display: flex; gap: 1rem;
+}
+.teacher-stat {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.75rem; color: var(--mid);
+}
+.teacher-stat-icon { font-size: 0.9rem; }
+
+.teacher-activity {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(37,50,56,0.06);
+  font-size: 0.75rem; color: var(--mid);
+}
+.teacher-activity strong { color: var(--dark); font-family: var(--font-head); }
+
+/* ============================================================
+   FACILITIES
+   ============================================================ */
+#facilities {
+  background: linear-gradient(135deg, #f5f3ee 0%, #fffdf8 100%);
+  overflow: hidden;
+}
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+.facility-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  border: 1px solid rgba(37,50,56,0.06);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative; overflow: hidden;
+}
+.facility-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.facility-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  opacity: 0; transition: var(--transition);
+  border-radius: var(--radius-md);
+}
+.facility-card:nth-child(4n+1)::before { background: linear-gradient(135deg, rgba(255,183,3,0.05), transparent); }
+.facility-card:nth-child(4n+2)::before { background: linear-gradient(135deg, rgba(142,202,230,0.05), transparent); }
+.facility-card:nth-child(4n+3)::before { background: linear-gradient(135deg, rgba(144,190,109,0.05), transparent); }
+.facility-card:nth-child(4n+4)::before { background: linear-gradient(135deg, rgba(251,133,0,0.05), transparent); }
+.facility-card:hover::before { opacity: 1; }
+
+.facility-icon { font-size: 2.4rem; margin-bottom: 0.8rem; display: block; }
+.facility-name {
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 700; color: var(--dark);
+}
+.facility-desc { font-size: 0.75rem; color: var(--mid); margin-top: 0.3rem; line-height: 1.5; }
+
+/* ============================================================
+   WHY CHOOSE
+   ============================================================ */
+#why {
+  background: var(--bg);
+  overflow: hidden;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.why-card {
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background: var(--white);
+  border: 1px solid rgba(37,50,56,0.06);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative; overflow: hidden;
+}
+.why-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.why-icon-wrap {
+  width: 64px; height: 64px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; margin: 0 auto 1rem;
+  transition: var(--transition);
+}
+.why-card:hover .why-icon-wrap { transform: scale(1.1) rotate(5deg); }
+.why-card:nth-child(1) .why-icon-wrap { background: rgba(255,183,3,0.12); }
+.why-card:nth-child(2) .why-icon-wrap { background: rgba(142,202,230,0.12); }
+.why-card:nth-child(3) .why-icon-wrap { background: rgba(144,190,109,0.12); }
+.why-card:nth-child(4) .why-icon-wrap { background: rgba(251,133,0,0.12); }
+.why-card:nth-child(5) .why-icon-wrap { background: rgba(179,136,255,0.12); }
+.why-card:nth-child(6) .why-icon-wrap { background: rgba(244,143,177,0.12); }
+.why-card:nth-child(7) .why-icon-wrap { background: rgba(255,183,3,0.12); }
+.why-card:nth-child(8) .why-icon-wrap { background: rgba(142,202,230,0.12); }
+
+.why-title {
+  font-family: var(--font-head);
+  font-size: 0.95rem; font-weight: 700; color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.why-desc { font-size: 0.8rem; color: var(--mid); line-height: 1.6; }
+
+/* ============================================================
+   STATS
+   ============================================================ */
+#stats {
+  background: linear-gradient(135deg, var(--yellow) 0%, var(--orange) 100%);
+  padding: 4rem 2rem;
+  position: relative; overflow: hidden;
+}
+#stats::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  position: relative; z-index: 1;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.stat-label {
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.4rem;
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+#gallery {
+  background: var(--bg);
+  overflow: hidden;
+}
+.gallery-filters {
+  display: flex; flex-wrap: wrap; gap: 0.8rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.gallery-filter {
+  padding: 0.5rem 1.4rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 600;
+  border: 1.5px solid rgba(37,50,56,0.12);
+  color: var(--mid);
+  transition: var(--transition);
+  cursor: pointer;
+  background: var(--white);
+}
+.gallery-filter:hover, .gallery-filter.active {
+  background: var(--dark); color: var(--white);
+  border-color: var(--dark);
+}
+.gallery-grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-thumb {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  transition: transform 0.5s ease;
+}
+.gallery-thumb-inner {
+  width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+  border-radius: var(--radius-md);
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover .gallery-thumb-inner { transform: scale(1.05); }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: rgba(37,50,56,0.7);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: var(--transition);
+  border-radius: var(--radius-md);
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay-icon { font-size: 2rem; color: var(--white); }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+#testimonials {
+  background: linear-gradient(135deg, #f0f7ff 0%, var(--bg) 100%);
+  overflow: hidden;
+}
+.testimonials-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: testimonial-scroll 30s linear infinite;
+  width: max-content;
+}
+.testimonial-track:hover { animation-play-state: paused; }
+@keyframes testimonial-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  min-width: 360px; max-width: 360px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(37,50,56,0.05);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.testimonial-card:hover { box-shadow: var(--shadow-xl); }
+.stars-row { display: flex; gap: 3px; margin-bottom: 1rem; }
+.star-filled { color: var(--yellow); font-size: 0.9rem; }
+.testimonial-text {
+  font-size: 0.9rem;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.testimonial-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.testimonial-name {
+  font-family: var(--font-head);
+  font-size: 0.9rem; font-weight: 700; color: var(--dark);
+}
+.testimonial-role { font-size: 0.75rem; color: var(--mid); }
+.testimonial-child {
+  margin-left: auto;
+  background: rgba(255,183,3,0.1);
+  border-radius: 99px;
+  padding: 0.3rem 0.8rem;
+  font-family: var(--font-head);
+  font-size: 0.7rem; font-weight: 600;
+  color: #c98100;
+}
+
+/* ============================================================
+   ADMISSIONS
+   ============================================================ */
+#admissions {
+  background: var(--dark);
+  overflow: hidden;
+  position: relative;
+}
+#admissions::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 30% 50%, rgba(255,183,3,0.06) 0%, transparent 70%);
+}
+.admissions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative; z-index: 1;
+}
+.admission-steps {
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.admission-step {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  position: relative;
+}
+.admission-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 20px; top: 44px;
+  width: 1px; height: calc(100% + 0.5rem);
+  background: rgba(255,255,255,0.08);
+}
+.admission-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--yellow);
+  color: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 800;
+  flex-shrink: 0;
+}
+.admission-info {}
+.admission-title {
+  font-family: var(--font-head);
+  font-size: 1rem; font-weight: 700; color: var(--white);
+}
+.admission-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; line-height: 1.5; }
+
+.admission-form-wrap {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+}
+.admission-form-title {
+  font-family: var(--font-head);
+  font-size: 1.3rem; font-weight: 800;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.admission-form-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+.form-group { margin-bottom: 1rem; }
+.form-label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.4rem;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--yellow);
+  background: rgba(255,183,3,0.05);
+  box-shadow: 0 0 0 3px rgba(255,183,3,0.1);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-select option { background: var(--dark); }
+.form-textarea { resize: none; min-height: 80px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  color: var(--dark);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-head);
+  font-size: 1rem; font-weight: 800;
+  border: none; cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,183,3,0.4); }
+
+/* Success state */
+.form-success {
+  display: none;
+  text-align: center; padding: 2rem;
+}
+.form-success.show { display: block; }
+.form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.form-success h3 { font-family: var(--font-head); font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+.form-success p { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+#faq {
+  background: var(--bg);
+  overflow: hidden;
+}
+.faq-list {
+  margin-top: 3rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+  max-width: 800px; margin-left: auto; margin-right: auto;
+  margin-top: 3rem;
+}
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(37,50,56,0.06);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.faq-item.open { box-shadow: var(--shadow-md); }
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  gap: 1rem;
+}
+.faq-q-text {
+  font-family: var(--font-head);
+  font-size: 0.95rem; font-weight: 700; color: var(--dark);
+}
+.faq-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(37,50,56,0.05);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem; color: var(--mid);
+  transition: var(--transition);
+}
+.faq-item.open .faq-icon { background: var(--yellow); color: var(--dark); transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 1.5rem;
+}
+.faq-item.open .faq-answer { max-height: 300px; padding: 0 1.5rem 1.2rem; }
+.faq-answer p { font-size: 0.875rem; color: var(--mid); line-height: 1.7; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact {
+  background: linear-gradient(135deg, #f5f3ee 0%, var(--bg) 100%);
+  overflow: hidden;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.contact-info {}
+.contact-items {
+  display: flex; flex-direction: column; gap: 1.5rem;
+  margin-top: 2rem;
+}
+.contact-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.2rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(37,50,56,0.06);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.contact-item:hover { box-shadow: var(--shadow-md); transform: translateX(4px); }
+.contact-item-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.contact-item:nth-child(1) .contact-item-icon { background: rgba(255,183,3,0.1); }
+.contact-item:nth-child(2) .contact-item-icon { background: rgba(37,211,102,0.1); }
+.contact-item:nth-child(3) .contact-item-icon { background: rgba(142,202,230,0.15); }
+.contact-item:nth-child(4) .contact-item-icon { background: rgba(251,133,0,0.1); }
+.contact-item:nth-child(5) .contact-item-icon { background: rgba(144,190,109,0.1); }
+.contact-item-title {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--mid); margin-bottom: 0.2rem;
+}
+.contact-item-val {
+  font-family: var(--font-head);
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--dark);
+}
+.contact-item-sub { font-size: 0.78rem; color: var(--mid); }
+
+.contact-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 260px;
+  background: linear-gradient(135deg, #8ECAE6 0%, #5ba3c9 100%);
+  margin-top: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+.contact-map-overlay {
+  position: absolute; inset: 0;
+  background: rgba(37,50,56,0.4);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 0.8rem;
+}
+.contact-map-btn {
+  background: var(--white);
+  color: var(--dark);
+  padding: 0.7rem 1.5rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 700;
+  transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.contact-map-btn:hover { background: var(--yellow); transform: scale(1.05); }
+
+.contact-hours {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(37,50,56,0.06);
+  box-shadow: var(--shadow-sm);
+}
+.contact-hours-title {
+  font-family: var(--font-head);
+  font-size: 0.85rem; font-weight: 700; color: var(--dark);
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: var(--mid);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(37,50,56,0.04);
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { font-weight: 600; font-family: var(--font-head); color: var(--dark); }
+.hours-open { color: var(--green); font-weight: 600; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--dark2);
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--yellow), var(--orange), var(--blue), var(--green));
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  max-width: 1200px; margin: 0 auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-head);
+  font-size: 1.5rem; font-weight: 800;
+  color: var(--white); margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+.footer-logo span { color: var(--yellow); }
+.footer-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7; max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+.footer-socials {
+  display: flex; gap: 0.8rem;
+}
+.social-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: rgba(255,255,255,0.6);
+  transition: var(--transition); cursor: pointer;
+}
+.social-btn:hover { background: var(--yellow); color: var(--dark); border-color: var(--yellow); }
+
+.footer-col-title {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1.2rem;
+}
+.footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-link {
+  font-size: 0.875rem; color: rgba(255,255,255,0.55);
+  transition: var(--transition); cursor: pointer;
+}
+.footer-link:hover { color: var(--yellow); padding-left: 4px; }
+
+.footer-newsletter {}
+.newsletter-desc {
+  font-size: 0.82rem; color: rgba(255,255,255,0.4);
+  margin-bottom: 1rem; line-height: 1.6;
+}
+.newsletter-form {
+  display: flex; gap: 0.5rem;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: var(--font-body); font-size: 0.85rem;
+  outline: none; transition: var(--transition);
+}
+.newsletter-input:focus { border-color: var(--yellow); }
+.newsletter-input::placeholder { color: rgba(255,255,255,0.25); }
+.newsletter-btn {
+  background: var(--yellow); color: var(--dark);
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-head); font-size: 0.85rem; font-weight: 700;
+  border: none; cursor: pointer;
+  transition: var(--transition);
+}
+.newsletter-btn:hover { background: var(--orange); }
+
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1200px; margin: 2rem auto 0;
+  font-size: 0.78rem; color: rgba(255,255,255,0.3);
+}
+.footer-bottom a { color: rgba(255,255,255,0.5); transition: var(--transition); }
+.footer-bottom a:hover { color: var(--yellow); }
+
+/* ============================================================
+   FLOATING BUTTONS
+   ============================================================ */
+.fab-group {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+  z-index: 500;
+}
+.fab {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+.fab:hover { transform: scale(1.1); }
+.fab-wa { background: #25D366; color: var(--white); }
+.fab-call { background: var(--blue); color: var(--white); }
+.fab-top {
+  background: var(--dark);
+  color: var(--white);
+  opacity: 0; pointer-events: none;
+  transition: var(--transition);
+}
+.fab-top.visible { opacity: 1; pointer-events: auto; }
+.fab-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  background: var(--dark);
+  color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-family: var(--font-head);
+  font-size: 0.7rem; font-weight: 600;
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: var(--transition);
+}
+.fab:hover .fab-tooltip { opacity: 1; }
+
+/* ============================================================
+   MOBILE STICKY BAR
+   ============================================================ */
+.mobile-sticky {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--dark);
+  z-index: 600;
+  padding: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.mobile-sticky-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.mobile-sticky-btn:nth-child(1) { background: var(--yellow); }
+.mobile-sticky-btn:nth-child(2) { background: #25D366; }
+.mobile-sticky-btn:nth-child(3) { background: var(--blue); }
+.mobile-sticky-btn:nth-child(4) { background: var(--orange); }
+.mobile-sticky-icon { font-size: 1.2rem; }
+.mobile-sticky-label {
+  font-family: var(--font-head);
+  font-size: 0.6rem; font-weight: 700;
+  color: var(--white); text-transform: uppercase; letter-spacing: 0.5px;
+}
+.mobile-sticky-btn:nth-child(1) .mobile-sticky-label { color: var(--dark); }
+
+/* ============================================================
+   CAMPUS TOUR SECTION
+   ============================================================ */
+#tour {
+  background: var(--dark);
+  overflow: hidden;
+  position: relative;
+}
+#tour::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 70% 50%, rgba(142,202,230,0.1) 0%, transparent 70%);
+}
+.tour-inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.tour-video {
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3a4a, #0f2535);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.tour-play {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(255,183,3,0.9);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  color: var(--dark);
+  transition: var(--transition);
+  animation: pulse-play 2.5s ease-in-out infinite;
+  box-shadow: 0 0 0 0 rgba(255,183,3,0.5);
+}
+@keyframes pulse-play {
+  0%,100% { box-shadow: 0 0 0 0 rgba(255,183,3,0.4); transform: scale(1); }
+  50% { box-shadow: 0 0 0 20px rgba(255,183,3,0); transform: scale(1.05); }
+}
+.tour-video:hover .tour-play { background: var(--yellow); transform: scale(1.1); }
+.tour-label {
+  position: absolute; bottom: 1.5rem; left: 1.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 99px; padding: 0.4rem 1rem;
+  font-family: var(--font-head); font-size: 0.75rem; font-weight: 600; color: var(--white);
+}
+.tour-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff5f5f; animation: blink 1s ease-in-out infinite; }
+
+.tour-hotspots {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  margin-top: 2rem;
+}
+.tour-hotspot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex; align-items: center; gap: 0.8rem;
+  cursor: pointer; transition: var(--transition);
+}
+.tour-hotspot:hover { background: rgba(255,183,3,0.1); border-color: rgba(255,183,3,0.3); }
+.tour-hotspot-icon { font-size: 1.5rem; }
+.tour-hotspot-name {
+  font-family: var(--font-head);
+  font-size: 0.8rem; font-weight: 700; color: var(--white);
+}
+.tour-hotspot-desc { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
+
+/* ============================================================
+   PARENT DASHBOARD
+   ============================================================ */
+#dashboard {
+  background: linear-gradient(135deg, var(--bg) 0%, #f0f7ff 100%);
+  overflow: hidden;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.phone-mockup {
+  width: 280px; margin: 0 auto;
+  background: var(--dark);
+  border-radius: 40px;
+  padding: 1rem;
+  box-shadow: 0 40px 100px rgba(37,50,56,0.25);
+  position: relative;
+}
+.phone-notch {
+  width: 80px; height: 20px;
+  background: var(--dark2);
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto 0.5rem;
+}
+.phone-screen {
+  background: #f5f5f5;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 9/19;
+}
+.phone-app {
+  background: #f5f5f5;
+  height: 100%;
+  display: flex; flex-direction: column;
+}
+.phone-header {
+  background: var(--dark);
+  padding: 0.8rem 1rem 0.6rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.phone-header-title { font-family: var(--font-head); font-size: 0.65rem; font-weight: 700; color: var(--white); }
+.phone-header-icon { font-size: 0.8rem; }
+.phone-avatar-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1rem 0.3rem; }
+.phone-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+.phone-child-name { font-family: var(--font-head); font-size: 0.6rem; font-weight: 700; color: var(--dark); }
+.phone-child-class { font-size: 0.5rem; color: var(--mid); }
+.phone-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; padding: 0.5rem 0.8rem; }
+.phone-card-mini {
+  background: var(--white);
+  border-radius: 8px; padding: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.phone-card-icon { font-size: 1rem; }
+.phone-card-val { font-family: var(--font-head); font-size: 0.6rem; font-weight: 700; color: var(--dark); }
+.phone-card-label { font-size: 0.45rem; color: var(--mid); }
+.phone-updates { padding: 0.5rem 0.8rem; }
+.phone-update-title { font-family: var(--font-head); font-size: 0.55rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+.phone-update-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: var(--white);
+  border-radius: 6px; padding: 0.4rem;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+.phone-update-icon { font-size: 0.7rem; }
+.phone-update-text { font-size: 0.45rem; color: var(--mid); line-height: 1.3; }
+.phone-update-time { margin-left: auto; font-size: 0.4rem; color: rgba(37,50,56,0.3); }
+
+.dashboard-features { display: flex; flex-direction: column; gap: 1.5rem; }
+.dashboard-feature {
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.dashboard-icon {
+  width: 48px; height: 48px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.dashboard-feature:nth-child(1) .dashboard-icon { background: rgba(255,183,3,0.1); }
+.dashboard-feature:nth-child(2) .dashboard-icon { background: rgba(37,211,102,0.1); }
+.dashboard-feature:nth-child(3) .dashboard-icon { background: rgba(142,202,230,0.15); }
+.dashboard-feature:nth-child(4) .dashboard-icon { background: rgba(251,133,0,0.1); }
+.dashboard-feature:nth-child(5) .dashboard-icon { background: rgba(144,190,109,0.1); }
+.dashboard-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--dark); }
+.dashboard-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+
+/* ============================================================
+   CONFETTI
+   ============================================================ */
+.confetti-piece {
+  position: fixed;
+  width: 10px; height: 10px;
+  top: -20px;
+  animation: confetti-fall 3s ease-in forwards;
+  z-index: 9998; pointer-events: none;
+  border-radius: 2px;
+}
+@keyframes confetti-fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .facilities-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 900px) {
+  .about-grid,
+  .philosophy-grid,
+  .admissions-grid,
+  .contact-grid,
+  .tour-inner,
+  .dashboard-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .teachers-grid { grid-template-columns: repeat(2, 1fr); }
+  .routine-timeline::before { left: 24px; }
+  .routine-item { flex-direction: row !important; }
+  .routine-item:nth-child(even) .routine-content { text-align: left; align-items: flex-start; }
+  .routine-dot { position: relative; left: auto; transform: none; flex-shrink: 0; }
+  .routine-content { width: auto; flex: 1; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-nav { display: flex; }
+  .fab-group { bottom: 5rem; }
+  .mobile-sticky { display: grid; }
+  .gallery-grid { columns: 2; }
+  .philosophy-circle { width: 260px; height: 260px; }
+  .philosophy-center { width: 80px; height: 80px; }
+  .philosophy-center-icon { font-size: 1.8rem; }
+}
+@media (max-width: 640px) {
+  .section { padding: 4rem 1.2rem; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .teachers-grid { grid-template-columns: 1fr; }
+  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-showcase { grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .gallery-grid { columns: 1; }
+  .about-values { grid-template-columns: 1fr; }
+  .tour-hotspots { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo">Rainbow <span>Roots</span> 🌈</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Rainbow <span>Roots</span> 🌈</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#teachers">Teachers</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#admissions" class="nav-cta">Enroll Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-nav-close" onclick="toggleMobileNav()">✕</span>
+  <a href="#about" onclick="toggleMobileNav()">About</a>
+  <a href="#programs" onclick="toggleMobileNav()">Programs</a>
+  <a href="#facilities" onclick="toggleMobileNav()">Facilities</a>
+  <a href="#teachers" onclick="toggleMobileNav()">Teachers</a>
+  <a href="#gallery" onclick="toggleMobileNav()">Gallery</a>
+  <a href="#admissions" onclick="toggleMobileNav()">Admissions</a>
+  <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero">
+  <div class="hero-sky"></div>
+  <div class="stars" id="stars"></div>
+  <div class="clouds" id="clouds"></div>
+  <div class="rainbow-arc"></div>
+
+  <!-- ABC Blocks -->
+  <div class="abc-block" style="top:20%;left:5%;background:#FFB703;color:#253238;animation-duration:3s;animation-delay:0s;">A</div>
+  <div class="abc-block" style="top:35%;right:6%;background:#8ECAE6;color:#253238;animation-duration:3.5s;animation-delay:0.5s;">B</div>
+  <div class="abc-block" style="bottom:25%;left:8%;background:#90BE6D;color:#253238;animation-duration:4s;animation-delay:1s;">C</div>
+  <div class="abc-block" style="top:60%;right:10%;background:#FB8500;color:#fff;animation-duration:2.8s;animation-delay:0.3s;">🌟</div>
+  <div class="abc-block" style="top:12%;right:18%;background:rgba(255,255,255,0.1);color:#fff;animation-duration:3.2s;animation-delay:0.8s;border:1px solid rgba(255,255,255,0.2);">1</div>
+  <div class="abc-block" style="bottom:35%;left:15%;background:rgba(255,183,3,0.15);color:#FFB703;animation-duration:2.6s;animation-delay:1.2s;border:1px solid rgba(255,183,3,0.3);">2</div>
+
+  <!-- Birds -->
+  <div class="bird" style="top:15%;animation-duration:12s;animation-delay:0s;"></div>
+  <div class="bird" style="top:22%;animation-duration:15s;animation-delay:3s;width:12px;height:6px;"></div>
+  <div class="bird" style="top:18%;animation-duration:10s;animation-delay:6s;"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <div class="hero-badge-dot"></div>
+      <span>🎉 Admissions Open 2025–26</span>
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Where Little Minds<br>
+      <span class="highlight">Blossom Into</span><br>
+      Bright Futures
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      A joyful preschool, daycare and activity center where every child learns with confidence, creativity and care. Located in the heart of Kalyan.
+    </p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <a href="#admissions" class="btn-primary">🏫 Book School Visit</a>
+      <a href="tel:+919999999999" class="btn-ghost">📞 Call Now</a>
+      <a href="https://wa.me/919999999999" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+    </div>
+    <div class="hero-showcase reveal reveal-delay-4">
+      <div class="hero-card">
+        <div class="hero-card-icon">👶</div>
+        <div class="hero-card-label">Ages 1.5–8</div>
+        <div class="hero-card-sub">All programs</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">📚</div>
+        <div class="hero-card-label">Activity Based</div>
+        <div class="hero-card-sub">Learning</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🛡️</div>
+        <div class="hero-card-label">CCTV Campus</div>
+        <div class="hero-card-sub">100% safe</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<section id="trust">
+  <div class="trust-inner">
+    <div class="trust-label">Trusted by Hundreds of Families in Kalyan</div>
+    <div class="trust-items">
+      <div class="trust-item"><span class="trust-icon">🛡️</span><span class="trust-text">Safe Campus</span></div>
+      <div class="trust-item"><span class="trust-icon">🎓</span><span class="trust-text">Qualified Teachers</span></div>
+      <div class="trust-item"><span class="trust-icon">🎨</span><span class="trust-text">Activity Based Learning</span></div>
+      <div class="trust-item"><span class="trust-icon">📹</span><span class="trust-text">24/7 CCTV</span></div>
+      <div class="trust-item"><span class="trust-icon">👥</span><span class="trust-text">Small Batch Size</span></div>
+      <div class="trust-item"><span class="trust-icon">📱</span><span class="trust-text">Daily Parent Updates</span></div>
+      <div class="trust-item"><span class="trust-icon">❄️</span><span class="trust-text">AC Classrooms</span></div>
+      <div class="trust-item"><span class="trust-icon">🏥</span><span class="trust-text">Medical Support</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-main-img">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;">
+            <div style="font-size:6rem;">🏫</div>
+            <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:white;text-align:center;padding:0 2rem;line-height:1.4;">Rainbow Roots Preschool<br><span style="font-size:0.75rem;opacity:0.8;font-weight:400;">Kalyan, Maharashtra</span></div>
+          </div>
+        </div>
+        <div class="about-float-card card-1">
+          <div class="about-float-icon">⭐</div>
+          <div>
+            <div class="about-float-title">Parent Rating</div>
+            <div class="about-float-val">4.9/5.0</div>
+          </div>
+        </div>
+        <div class="about-float-card card-2">
+          <div class="about-float-icon">👨‍👩‍👧‍👦</div>
+          <div>
+            <div class="about-float-title">Happy Families</div>
+            <div class="about-float-val">500+</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-2">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">A Place Where Every Child is Celebrated</h2>
+        <p style="font-size:1rem;color:var(--mid);line-height:1.8;margin-bottom:1.2rem;">
+          At Rainbow Roots, we believe that childhood is a once-in-a-lifetime journey — and every step of it deserves joy, wonder, and nurturing care. Founded with a vision to bring world-class early childhood education to Kalyan, we've created a space where little ones don't just learn, they <em>thrive</em>.
+        </p>
+        <p style="font-size:1rem;color:var(--mid);line-height:1.8;margin-bottom:2rem;">
+          Our approach weaves together play-based learning, emotional intelligence, creative exploration and academic readiness — because we know that the roots planted in these early years grow into a lifetime of confidence.
+        </p>
+        <div class="about-values">
+          <div class="about-value">
+            <span class="about-value-icon">❤️</span>
+            <div>
+              <div class="about-value-title">Care & Safety</div>
+              <div class="about-value-desc">Every child feels safe, loved and seen every single day</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-icon">🎨</span>
+            <div>
+              <div class="about-value-title">Creativity</div>
+              <div class="about-value-desc">Art, music, drama and play fuel imagination</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-icon">💪</span>
+            <div>
+              <div class="about-value-title">Confidence</div>
+              <div class="about-value-desc">We build little leaders who believe in themselves</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-icon">🔍</span>
+            <div>
+              <div class="about-value-title">Curiosity</div>
+              <div class="about-value-desc">Questions are celebrated — wonder is our classroom</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-icon">🌱</span>
+            <div>
+              <div class="about-value-title">Growth Mindset</div>
+              <div class="about-value-desc">Every mistake is a stepping stone to learning</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-icon">🤝</span>
+            <div>
+              <div class="about-value-title">Respect</div>
+              <div class="about-value-desc">Diversity, kindness and empathy are core values</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHILOSOPHY ===================== -->
+<section id="philosophy" class="section">
+  <div class="container">
+    <div class="philosophy-grid">
+      <div class="reveal">
+        <div class="section-tag" style="color:var(--yellow);">Our Approach</div>
+        <h2 class="section-title" style="color:var(--white);">Learning Through the Joy of Living</h2>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:2.5rem;">Our philosophy is simple: when children are happy, they learn. We follow a spiral curriculum where every concept is revisited with depth — building a love for learning that lasts a lifetime.</p>
+        <div class="philosophy-steps">
+          <div class="philosophy-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <div class="step-title">🎮 Play</div>
+              <div class="step-desc">Structured and free play that builds social skills and joy</div>
+            </div>
+            <div class="step-arrow">→</div>
+          </div>
+          <div class="philosophy-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <div class="step-title">🔭 Explore</div>
+              <div class="step-desc">Hands-on experiments that ignite natural curiosity</div>
+            </div>
+            <div class="step-arrow">→</div>
+          </div>
+          <div class="philosophy-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-title">💭 Imagine</div>
+              <div class="step-desc">Creative storytelling and art unlock limitless possibility</div>
+            </div>
+            <div class="step-arrow">→</div>
+          </div>
+          <div class="philosophy-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <div class="step-title">🧠 Think</div>
+              <div class="step-desc">Critical thinking puzzles build problem-solving muscles</div>
+            </div>
+            <div class="step-arrow">→</div>
+          </div>
+          <div class="philosophy-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <div class="step-title">✨ Create</div>
+              <div class="step-desc">Projects that give children pride and ownership in learning</div>
+            </div>
+            <div class="step-arrow">→</div>
+          </div>
+          <div class="philosophy-step">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <div class="step-title">🌳 Grow</div>
+              <div class="step-desc">Confident, kind and ready-for-the-world individuals</div>
+            </div>
+            <div class="step-arrow">→</div>
+          </div>
+        </div>
+      </div>
+      <div class="philosophy-visual reveal reveal-delay-2">
+        <div class="philosophy-circle">
+          <div class="philosophy-center">
+            <div class="philosophy-center-icon">🌈</div>
+            <div class="philosophy-center-text">Rainbow<br>Roots</div>
+          </div>
+          <div class="orbit-item" style="top:-28px;left:50%;transform:translateX(-50%)rotate(0deg) rotate(0deg)"><span>🎮</span>Play</div>
+          <div class="orbit-item" style="top:25%;right:-28px;"><span>🔭</span>Explore</div>
+          <div class="orbit-item" style="bottom:25%;right:-28px;"><span>💭</span>Imagine</div>
+          <div class="orbit-item" style="bottom:-28px;left:50%;transform:translateX(-50%)"><span>🧠</span>Think</div>
+          <div class="orbit-item" style="bottom:25%;left:-28px;"><span>✨</span>Create</div>
+          <div class="orbit-item" style="top:25%;left:-28px;"><span>🌳</span>Grow</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROGRAMS ===================== -->
+<section id="programs" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Programs & Curriculum</div>
+      <h2 class="section-title">The Perfect Program for Every Little Learner</h2>
+      <p class="section-sub">From toddlers taking their first steps to big kids preparing for school — we have a program designed just for them.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card yellow reveal">
+        <span class="program-emoji">🐣</span>
+        <span class="program-age">Age 1.5 – 2.5 Yrs</span>
+        <div class="program-name">Playgroup</div>
+        <p class="program-desc">A gentle introduction to the world of learning through songs, stories and sensory play. Perfect first step.</p>
+        <div class="program-features">
+          <div class="program-feature">Sensory Play & Motor Skills</div>
+          <div class="program-feature">Language Development</div>
+          <div class="program-feature">Social Skills & Sharing</div>
+          <div class="program-feature">Songs, Rhymes & Stories</div>
+        </div>
+        <a href="#admissions" class="program-cta">Enroll Now →</a>
+        <div class="program-bg-icon">🐣</div>
+      </div>
+      <div class="program-card blue reveal reveal-delay-1">
+        <span class="program-emoji">🌱</span>
+        <span class="program-age">Age 2.5 – 3.5 Yrs</span>
+        <div class="program-name">Nursery</div>
+        <p class="program-desc">Building foundations in literacy, numeracy and emotional intelligence through joyful discovery.</p>
+        <div class="program-features">
+          <div class="program-feature">Pre-Reading & Writing Prep</div>
+          <div class="program-feature">Number Concepts</div>
+          <div class="program-feature">Art & Craft Activities</div>
+          <div class="program-feature">Outdoor Learning</div>
+        </div>
+        <a href="#admissions" class="program-cta">Enroll Now →</a>
+        <div class="program-bg-icon">🌱</div>
+      </div>
+      <div class="program-card green reveal reveal-delay-2">
+        <span class="program-emoji">📚</span>
+        <span class="program-age">Age 3.5 – 4.5 Yrs</span>
+        <div class="program-name">Junior KG</div>
+        <p class="program-desc">Building real academic confidence through structured play, phonics and mathematical thinking.</p>
+        <div class="program-features">
+          <div class="program-feature">Phonics & Early Reading</div>
+          <div class="program-feature">Math & Logical Thinking</div>
+          <div class="program-feature">Science Explorations</div>
+          <div class="program-feature">Life Skills</div>
+        </div>
+        <a href="#admissions" class="program-cta">Enroll Now →</a>
+        <div class="program-bg-icon">📚</div>
+      </div>
+      <div class="program-card orange reveal reveal-delay-3">
+        <span class="program-emoji">🚀</span>
+        <span class="program-age">Age 4.5 – 6 Yrs</span>
+        <div class="program-name">Senior KG</div>
+        <p class="program-desc">School-ready skills with advanced reading, writing, and critical thinking. Ready for Grade 1 and beyond.</p>
+        <div class="program-features">
+          <div class="program-feature">Advanced Phonics & Reading</div>
+          <div class="program-feature">Creative Writing</div>
+          <div class="program-feature">STEM Activities</div>
+          <div class="program-feature">Leadership Skills</div>
+        </div>
+        <a href="#admissions" class="program-cta">Enroll Now →</a>
+        <div class="program-bg-icon">🚀</div>
+      </div>
+      <div class="program-card purple reveal reveal-delay-4">
+        <span class="program-emoji">🌙</span>
+        <span class="program-age">Age 1.5 – 8 Yrs</span>
+        <div class="program-name">Daycare</div>
+        <p class="program-desc">Safe, loving full-day care that gives working parents peace of mind while children learn and play.</p>
+        <div class="program-features">
+          <div class="program-feature">Full-Day Professional Care</div>
+          <div class="program-feature">Nutritious Meals & Snacks</div>
+          <div class="program-feature">Supervised Rest Time</div>
+          <div class="program-feature">Daily Parent Updates</div>
+        </div>
+        <a href="#admissions" class="program-cta">Enroll Now →</a>
+        <div class="program-bg-icon">🌙</div>
+      </div>
+      <div class="program-card pink reveal reveal-delay-5">
+        <span class="program-emoji">🎨</span>
+        <span class="program-age">Age 3 – 8 Yrs</span>
+        <div class="program-name">Activity Center</div>
+        <p class="program-desc">After-school enrichment in arts, dance, music, sports, yoga and creative coding. Talents discovered daily.</p>
+        <div class="program-features">
+          <div class="program-feature">Arts, Craft & Painting</div>
+          <div class="program-feature">Dance & Music</div>
+          <div class="program-feature">Yoga & Sports</div>
+          <div class="program-feature">Weekend Workshops</div>
+        </div>
+        <a href="#admissions" class="program-cta">Enroll Now →</a>
+        <div class="program-bg-icon">🎨</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DAILY ROUTINE ===================== -->
+<section id="routine" class="section">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:0;">
+      <div class="section-tag" style="color:var(--yellow);justify-content:center;">A Day at Rainbow Roots</div>
+      <h2 class="section-title" style="color:var(--white);">Every Hour Filled with Purpose & Play</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);">Our carefully crafted daily schedule balances structured learning with creative play, ensuring children are engaged, energized and happy all day long.</p>
+    </div>
+    <div class="routine-timeline">
+      <div class="routine-item reveal">
+        <div class="routine-content">
+          <div class="routine-time">7:30 – 8:30 AM</div>
+          <div class="routine-name">🌅 Morning Welcome</div>
+          <div class="routine-desc">Warm greetings, attendance and settling-in activities</div>
+        </div>
+        <div class="routine-dot">🌅</div>
+        <div style="width:calc(50% - 40px);"></div>
+      </div>
+      <div class="routine-item reveal reveal-delay-1">
+        <div style="width:calc(50% - 40px);"></div>
+        <div class="routine-dot">⭕</div>
+        <div class="routine-content">
+          <div class="routine-time">8:30 – 9:15 AM</div>
+          <div class="routine-name">⭕ Circle Time</div>
+          <div class="routine-desc">Calendar, weather, sharing and morning discussions</div>
+        </div>
+      </div>
+      <div class="routine-item reveal reveal-delay-2">
+        <div class="routine-content">
+          <div class="routine-time">9:15 – 10:30 AM</div>
+          <div class="routine-name">📖 Learning Block</div>
+          <div class="routine-desc">Core concepts in literacy, numeracy and language arts</div>
+        </div>
+        <div class="routine-dot">📖</div>
+        <div style="width:calc(50% - 40px);"></div>
+      </div>
+      <div class="routine-item reveal reveal-delay-3">
+        <div style="width:calc(50% - 40px);"></div>
+        <div class="routine-dot">🍎</div>
+        <div class="routine-content">
+          <div class="routine-time">10:30 – 11:00 AM</div>
+          <div class="routine-name">🍎 Snack & Nutrition</div>
+          <div class="routine-desc">Healthy snack time with social conversations</div>
+        </div>
+      </div>
+      <div class="routine-item reveal reveal-delay-4">
+        <div class="routine-content">
+          <div class="routine-time">11:00 – 11:45 AM</div>
+          <div class="routine-name">🌿 Outdoor Play</div>
+          <div class="routine-desc">Physical activity, sports and nature exploration</div>
+        </div>
+        <div class="routine-dot">🌿</div>
+        <div style="width:calc(50% - 40px);"></div>
+      </div>
+      <div class="routine-item reveal reveal-delay-5">
+        <div style="width:calc(50% - 40px);"></div>
+        <div class="routine-dot">🎨</div>
+        <div class="routine-content">
+          <div class="routine-time">11:45 AM – 12:30 PM</div>
+          <div class="routine-name">🎨 Creative Arts</div>
+          <div class="routine-desc">Art, craft, painting and creative expression time</div>
+        </div>
+      </div>
+      <div class="routine-item reveal">
+        <div class="routine-content">
+          <div class="routine-time">12:30 – 1:00 PM</div>
+          <div class="routine-name">🎵 Music & Movement</div>
+          <div class="routine-desc">Songs, dance, instruments and rhythmic play</div>
+        </div>
+        <div class="routine-dot">🎵</div>
+        <div style="width:calc(50% - 40px);"></div>
+      </div>
+      <div class="routine-item reveal reveal-delay-1">
+        <div style="width:calc(50% - 40px);"></div>
+        <div class="routine-dot">📖</div>
+        <div class="routine-content">
+          <div class="routine-time">1:00 – 1:30 PM</div>
+          <div class="routine-name">📖 Story Time</div>
+          <div class="routine-desc">Interactive storytelling and vocabulary building</div>
+        </div>
+      </div>
+      <div class="routine-item reveal reveal-delay-2">
+        <div class="routine-content">
+          <div class="routine-time">1:30 PM</div>
+          <div class="routine-name">🏠 Happy Pickup</div>
+          <div class="routine-desc">Safe dismissal with daily parent update reports</div>
+        </div>
+        <div class="routine-dot">🏠</div>
+        <div style="width:calc(50% - 40px);"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEACHERS ===================== -->
+<section id="teachers" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Our Educators</div>
+      <h2 class="section-title">Hearts That Teach, Minds That Inspire</h2>
+      <p class="section-sub">Every Rainbow Roots teacher is carefully selected — not just for their qualifications, but for their genuine love of children.</p>
+    </div>
+    <div class="teachers-grid">
+      <div class="teacher-card reveal reveal-delay-1">
+        <div class="teacher-photo">
+          👩‍🏫
+          <div class="teacher-hover-overlay">
+            <div class="teacher-quote">"Every child is a story yet to be told. I wake up excited to help write the most beautiful chapters."</div>
+          </div>
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ms. Priya Sharma</div>
+          <div class="teacher-role">Head of Early Childhood Education</div>
+          <div class="teacher-stats">
+            <div class="teacher-stat"><span class="teacher-stat-icon">🎓</span> B.Ed, ECE Certified</div>
+            <div class="teacher-stat"><span class="teacher-stat-icon">⏰</span> 8 Years Exp.</div>
+          </div>
+          <div class="teacher-activity">❤️ Favorite: <strong>Storytelling & Drama</strong></div>
+        </div>
+      </div>
+      <div class="teacher-card reveal reveal-delay-2">
+        <div class="teacher-photo">
+          👩‍🎨
+          <div class="teacher-hover-overlay">
+            <div class="teacher-quote">"When a child picks up a paintbrush for the first time and creates something — that look of pride is my whole world."</div>
+          </div>
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ms. Anjali Patil</div>
+          <div class="teacher-role">Creative Arts & Music Educator</div>
+          <div class="teacher-stats">
+            <div class="teacher-stat"><span class="teacher-stat-icon">🎓</span> Fine Arts, Montessori</div>
+            <div class="teacher-stat"><span class="teacher-stat-icon">⏰</span> 6 Years Exp.</div>
+          </div>
+          <div class="teacher-activity">❤️ Favorite: <strong>Finger Painting & Music</strong></div>
+        </div>
+      </div>
+      <div class="teacher-card reveal reveal-delay-3">
+        <div class="teacher-photo">
+          👨‍🏫
+          <div class="teacher-hover-overlay">
+            <div class="teacher-quote">"Learning through play isn't a method — it's how childhood is supposed to feel. I protect that magic every day."</div>
+          </div>
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. Rohit Desai</div>
+          <div class="teacher-role">Physical Education & Sports</div>
+          <div class="teacher-stats">
+            <div class="teacher-stat"><span class="teacher-stat-icon">🎓</span> M.P.Ed, Yoga Cert.</div>
+            <div class="teacher-stat"><span class="teacher-stat-icon">⏰</span> 5 Years Exp.</div>
+          </div>
+          <div class="teacher-activity">❤️ Favorite: <strong>Yoga & Team Sports</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FACILITIES ===================== -->
+<section id="facilities" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">World-Class Facilities</div>
+      <h2 class="section-title">Built for Wonder, Designed for Safety</h2>
+      <p class="section-sub">Every square foot of Rainbow Roots has been thoughtfully designed to spark curiosity while keeping your child completely safe.</p>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-card reveal">
+        <span class="facility-icon">🖥️</span>
+        <div class="facility-name">Smart Classrooms</div>
+        <div class="facility-desc">Interactive displays and digital learning tools</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-1">
+        <span class="facility-icon">🏃</span>
+        <div class="facility-name">Indoor Play Zone</div>
+        <div class="facility-desc">Safe, padded indoor play equipment for all weather</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-2">
+        <span class="facility-icon">🌳</span>
+        <div class="facility-name">Outdoor Garden</div>
+        <div class="facility-desc">Green outdoor space for nature play and exploration</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-3">
+        <span class="facility-icon">📚</span>
+        <div class="facility-name">Reading Corner</div>
+        <div class="facility-desc">Cozy library nook with 500+ books for all ages</div>
+      </div>
+      <div class="facility-card reveal">
+        <span class="facility-icon">🎨</span>
+        <div class="facility-name">Art Studio</div>
+        <div class="facility-desc">Dedicated space for painting, sculpting and crafts</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-1">
+        <span class="facility-icon">🎵</span>
+        <div class="facility-name">Music Room</div>
+        <div class="facility-desc">Instruments for every child to discover their rhythm</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-2">
+        <span class="facility-icon">💃</span>
+        <div class="facility-name">Dance Studio</div>
+        <div class="facility-desc">Mirrored dance studio with sprung floors for safety</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-3">
+        <span class="facility-icon">🚿</span>
+        <div class="facility-name">Safe Washrooms</div>
+        <div class="facility-desc">Child-sized, hygienic and gender-separate facilities</div>
+      </div>
+      <div class="facility-card reveal">
+        <span class="facility-icon">📹</span>
+        <div class="facility-name">CCTV Security</div>
+        <div class="facility-desc">24/7 campus monitoring for complete peace of mind</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-1">
+        <span class="facility-icon">❄️</span>
+        <div class="facility-name">AC Classrooms</div>
+        <div class="facility-desc">Climate-controlled rooms for year-round comfort</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-2">
+        <span class="facility-icon">🏥</span>
+        <div class="facility-name">Medical Support</div>
+        <div class="facility-desc">On-call nurse and first aid in every classroom</div>
+      </div>
+      <div class="facility-card reveal reveal-delay-3">
+        <span class="facility-icon">🧹</span>
+        <div class="facility-name">Premium Hygiene</div>
+        <div class="facility-desc">Sanitized spaces and hand-washing routines all day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAMPUS TOUR ===================== -->
+<section id="tour" class="section">
+  <div class="container">
+    <div class="tour-inner">
+      <div class="reveal">
+        <div class="section-tag" style="color:var(--yellow);">Virtual Tour</div>
+        <h2 class="section-title" style="color:var(--white);">Take a Walk Through Our Campus</h2>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:2rem;">Can't visit in person yet? Take a virtual tour of Rainbow Roots and see exactly where your child will spend their most precious learning years.</p>
+        <div class="tour-hotspots">
+          <div class="tour-hotspot">
+            <span class="tour-hotspot-icon">🏫</span>
+            <div>
+              <div class="tour-hotspot-name">Main Entrance</div>
+              <div class="tour-hotspot-desc">Safe welcome zone</div>
+            </div>
+          </div>
+          <div class="tour-hotspot">
+            <span class="tour-hotspot-icon">🎨</span>
+            <div>
+              <div class="tour-hotspot-name">Art Studio</div>
+              <div class="tour-hotspot-desc">Where creativity lives</div>
+            </div>
+          </div>
+          <div class="tour-hotspot">
+            <span class="tour-hotspot-icon">📚</span>
+            <div>
+              <div class="tour-hotspot-name">Library Corner</div>
+              <div class="tour-hotspot-desc">500+ books to explore</div>
+            </div>
+          </div>
+          <div class="tour-hotspot">
+            <span class="tour-hotspot-icon">🌿</span>
+            <div>
+              <div class="tour-hotspot-name">Garden & Play</div>
+              <div class="tour-hotspot-desc">Nature learning space</div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-flex;">📅 Book a Physical Visit</a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="tour-video" onclick="this.innerHTML='<div style=\'padding:2rem;text-align:center;color:white;\'><div style=\'font-size:3rem;margin-bottom:1rem\'>🎬</div><p style=\'font-family:var(--font-head);font-size:0.9rem;\'>Virtual tour video would play here.<br>Contact us to schedule a live tour!</p></div>'">
+          <div style="text-align:center;">
+            <div style="font-size:4rem;margin-bottom:1rem;">🏫</div>
+            <div style="font-family:var(--font-head);font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Rainbow Roots Campus Tour</div>
+            <div class="tour-play">▶</div>
+          </div>
+          <div class="tour-label">
+            <div class="tour-dot"></div>
+            Take Virtual Tour
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARENT DASHBOARD ===================== -->
+<section id="dashboard" class="section">
+  <div class="container">
+    <div class="dashboard-grid">
+      <div class="reveal">
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-app">
+              <div class="phone-header">
+                <div class="phone-header-title">🌈 Rainbow Roots</div>
+                <div class="phone-header-icon">🔔</div>
+              </div>
+              <div class="phone-avatar-row">
+                <div class="phone-avatar">👶</div>
+                <div>
+                  <div class="phone-child-name">Aarav Sharma</div>
+                  <div class="phone-child-class">Nursery — Section A</div>
+                </div>
+              </div>
+              <div class="phone-cards">
+                <div class="phone-card-mini">
+                  <div class="phone-card-icon">✅</div>
+                  <div class="phone-card-val">Present</div>
+                  <div class="phone-card-label">Today</div>
+                </div>
+                <div class="phone-card-mini">
+                  <div class="phone-card-icon">🍎</div>
+                  <div class="phone-card-val">Ate Well</div>
+                  <div class="phone-card-label">Snack</div>
+                </div>
+                <div class="phone-card-mini">
+                  <div class="phone-card-icon">😊</div>
+                  <div class="phone-card-val">Happy</div>
+                  <div class="phone-card-label">Mood</div>
+                </div>
+                <div class="phone-card-mini">
+                  <div class="phone-card-icon">📸</div>
+                  <div class="phone-card-val">3 New</div>
+                  <div class="phone-card-label">Photos</div>
+                </div>
+              </div>
+              <div class="phone-updates">
+                <div class="phone-update-title">Today's Updates</div>
+                <div class="phone-update-item">
+                  <span class="phone-update-icon">📝</span>
+                  <span class="phone-update-text">Aarav completed his alphabet worksheet today!</span>
+                  <span class="phone-update-time">10:30</span>
+                </div>
+                <div class="phone-update-item">
+                  <span class="phone-update-icon">🎨</span>
+                  <span class="phone-update-text">Painted a beautiful rainbow in art class</span>
+                  <span class="phone-update-time">12:15</span>
+                </div>
+                <div class="phone-update-item">
+                  <span class="phone-update-icon">🚌</span>
+                  <span class="phone-update-text">Ready for pickup at 1:30 PM</span>
+                  <span class="phone-update-time">1:10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="section-tag">Parent App</div>
+        <h2 class="section-title">Stay Connected Every Single Day</h2>
+        <p style="font-size:1rem;color:var(--mid);line-height:1.8;margin-bottom:2.5rem;">Your child's entire school day — right in your pocket. Know what they ate, how they played, what they learned, and when they're ready to come home.</p>
+        <div class="dashboard-features">
+          <div class="dashboard-feature">
+            <div class="dashboard-icon">✅</div>
+            <div>
+              <div class="dashboard-title">Live Attendance</div>
+              <div class="dashboard-desc">Instant notification the moment your child is marked present or absent</div>
+            </div>
+          </div>
+          <div class="dashboard-feature">
+            <div class="dashboard-icon">📸</div>
+            <div>
+              <div class="dashboard-title">Daily Photo Updates</div>
+              <div class="dashboard-desc">Precious moments from their day — activities, learning, and smiles</div>
+            </div>
+          </div>
+          <div class="dashboard-feature">
+            <div class="dashboard-icon">🍎</div>
+            <div>
+              <div class="dashboard-title">Meal & Snack Reports</div>
+              <div class="dashboard-desc">Know exactly what and how much your child ate today</div>
+            </div>
+          </div>
+          <div class="dashboard-feature">
+            <div class="dashboard-icon">💬</div>
+            <div>
+              <div class="dashboard-title">Teacher Messaging</div>
+              <div class="dashboard-desc">Direct, real-time communication with your child's teacher</div>
+            </div>
+          </div>
+          <div class="dashboard-feature">
+            <div class="dashboard-icon">🏠</div>
+            <div>
+              <div class="dashboard-title">Pickup Alerts</div>
+              <div class="dashboard-desc">Never miss a pickup — get notified exactly when to arrive</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE ===================== -->
+<section id="why" class="section" style="background:linear-gradient(135deg,#f5f3ee 0%,var(--bg) 100%);">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Why Rainbow Roots</div>
+      <h2 class="section-title">8 Reasons Kalyan Families Choose Us</h2>
+      <p class="section-sub">We're not just another preschool. We're a community built on love, learning and the belief that every child is extraordinary.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🛡️</div>
+        <div class="why-title">100% Safe Environment</div>
+        <div class="why-desc">CCTV, secure entry, padded play areas and daily sanitization — safety is never compromised.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon-wrap">📚</div>
+        <div class="why-title">Modern Curriculum</div>
+        <div class="why-desc">Internationally inspired, activity-based curriculum tailored for Indian children and culture.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon-wrap">🎓</div>
+        <div class="why-title">Experienced Teachers</div>
+        <div class="why-desc">Every educator is qualified, trained and deeply passionate about early childhood development.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon-wrap">😂</div>
+        <div class="why-title">Fun Every Single Day</div>
+        <div class="why-desc">Children who love school learn better. We make every day an adventure worth waking up for.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">👤</div>
+        <div class="why-title">Individual Attention</div>
+        <div class="why-desc">Small batch sizes mean every child gets seen, heard and celebrated for who they truly are.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon-wrap">🎨</div>
+        <div class="why-title">Creativity First</div>
+        <div class="why-desc">Art, music, dance and drama are core subjects — not extras. We grow whole humans.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon-wrap">💪</div>
+        <div class="why-title">Confidence Building</div>
+        <div class="why-desc">Public speaking, leadership activities and growth challenges build children who stand tall.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon-wrap">💝</div>
+        <div class="why-title">Emotional Development</div>
+        <div class="why-desc">SEL-based approach teaches children to name feelings, manage emotions and be kind.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="500">0</div>
+        <div class="stat-label">Happy Students</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num" data-target="15">0</div>
+        <div class="stat-label">Qualified Teachers</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num" data-target="7">0</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num" data-target="50">0</div>
+        <div class="stat-label">Activities & Programs</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-4">
+        <div class="stat-num" data-target="98">0</div>
+        <div class="stat-label">% Parent Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery" class="section">
+  <div class="container-lg">
+    <div class="text-center reveal">
+      <div class="section-tag">Campus Life</div>
+      <h2 class="section-title">Moments That Tell Our Story</h2>
+      <p class="section-sub">A glimpse into the everyday magic happening at Rainbow Roots — through activities, events and beautiful learning moments.</p>
+    </div>
+    <div class="gallery-filters reveal reveal-delay-1">
+      <button class="gallery-filter active" onclick="filterGallery('all',this)">All</button>
+      <button class="gallery-filter" onclick="filterGallery('events',this)">Events</button>
+      <button class="gallery-filter" onclick="filterGallery('activities',this)">Activities</button>
+      <button class="gallery-filter" onclick="filterGallery('classrooms',this)">Classrooms</button>
+      <button class="gallery-filter" onclick="filterGallery('arts',this)">Arts & Crafts</button>
+      <button class="gallery-filter" onclick="filterGallery('sports',this)">Sports</button>
+      <button class="gallery-filter" onclick="filterGallery('celebrations',this)">Celebrations</button>
+    </div>
+    <div class="gallery-grid reveal reveal-delay-2" id="galleryGrid">
+      <div class="gallery-item" data-cat="events">
+        <div class="gallery-thumb-inner" style="height:220px;background:linear-gradient(135deg,#FFB703,#FB8500);">🎪</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="arts">
+        <div class="gallery-thumb-inner" style="height:180px;background:linear-gradient(135deg,#8ECAE6,#5ba3c9);">🎨</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="classrooms">
+        <div class="gallery-thumb-inner" style="height:260px;background:linear-gradient(135deg,#90BE6D,#6a9e3f);">🏫</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="sports">
+        <div class="gallery-thumb-inner" style="height:200px;background:linear-gradient(135deg,#FFB703,#90BE6D);">⚽</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="celebrations">
+        <div class="gallery-thumb-inner" style="height:240px;background:linear-gradient(135deg,#f48fb1,#e91e63);">🎂</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="activities">
+        <div class="gallery-thumb-inner" style="height:190px;background:linear-gradient(135deg,#b388ff,#7c4dff);">🎭</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="arts">
+        <div class="gallery-thumb-inner" style="height:230px;background:linear-gradient(135deg,#FB8500,#FFB703);">✏️</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="events">
+        <div class="gallery-thumb-inner" style="height:170px;background:linear-gradient(135deg,#8ECAE6,#FFB703);">🌟</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="classrooms">
+        <div class="gallery-thumb-inner" style="height:210px;background:linear-gradient(135deg,#90BE6D,#8ECAE6);">📚</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="sports">
+        <div class="gallery-thumb-inner" style="height:250px;background:linear-gradient(135deg,#FFB703,#f48fb1);">🏃</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="celebrations">
+        <div class="gallery-thumb-inner" style="height:185px;background:linear-gradient(135deg,#b388ff,#FFB703);">🎉</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+      <div class="gallery-item" data-cat="activities">
+        <div class="gallery-thumb-inner" style="height:220px;background:linear-gradient(135deg,#FB8500,#90BE6D);">🎵</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">🔍</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials" class="section">
+  <div class="container-lg">
+    <div class="text-center reveal">
+      <div class="section-tag">Parent Stories</div>
+      <h2 class="section-title">Hear It From Rainbow Roots Families</h2>
+      <p class="section-sub">The best proof of our promise is the words of the parents who trusted us with their most precious treasure.</p>
+    </div>
+    <div class="testimonials-slider" style="margin-top:3rem;">
+      <div class="testimonial-track">
+        <!-- Original set -->
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"My son Arjun used to cry every morning before school. Within two weeks at Rainbow Roots, he was running in ahead of me! The teachers genuinely love these kids."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(255,183,3,0.15);">👩</div>
+            <div>
+              <div class="testimonial-name">Sneha Kulkarni</div>
+              <div class="testimonial-role">Parent of Arjun, Nursery</div>
+            </div>
+            <div class="testimonial-child">👶 Nursery</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"The parent app is incredible. I can see photos of Riya painting, know she ate her snack, and get real updates all day. I feel like I'm there with her."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(142,202,230,0.15);">👨</div>
+            <div>
+              <div class="testimonial-name">Vikram Mehta</div>
+              <div class="testimonial-role">Parent of Riya, Playgroup</div>
+            </div>
+            <div class="testimonial-child">👶 Playgroup</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Our daughter learned to read at 4 years old. The phonics program here is exceptional. She's reading simple books already and loves it. Best decision we ever made."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(144,190,109,0.15);">👩</div>
+            <div>
+              <div class="testimonial-name">Pooja Joshi</div>
+              <div class="testimonial-role">Parent of Ananya, Jr. KG</div>
+            </div>
+            <div class="testimonial-child">👶 Jr. KG</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"The cleanliness, safety and care at Rainbow Roots is unmatched in Kalyan. My twins have been here for 3 years and I cannot imagine sending them anywhere else."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(251,133,0,0.15);">👨</div>
+            <div>
+              <div class="testimonial-name">Rahul & Meena Shah</div>
+              <div class="testimonial-role">Parents of Twins, Sr. KG</div>
+            </div>
+            <div class="testimonial-child">👶 Sr. KG</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Ms. Priya knows every child by name, knows their personality, their fears and their strengths. That personal attention is what makes Rainbow Roots truly special."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(179,136,255,0.15);">👩</div>
+            <div>
+              <div class="testimonial-name">Aishwarya Nair</div>
+              <div class="testimonial-role">Parent of Dev, Nursery</div>
+            </div>
+            <div class="testimonial-child">👶 Nursery</div>
+          </div>
+        </div>
+        <!-- Duplicate set for infinite loop -->
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"My son Arjun used to cry every morning before school. Within two weeks at Rainbow Roots, he was running in ahead of me! The teachers genuinely love these kids."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(255,183,3,0.15);">👩</div>
+            <div>
+              <div class="testimonial-name">Sneha Kulkarni</div>
+              <div class="testimonial-role">Parent of Arjun, Nursery</div>
+            </div>
+            <div class="testimonial-child">👶 Nursery</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"The parent app is incredible. I can see photos of Riya painting, know she ate her snack, and get real updates all day. I feel like I'm there with her."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(142,202,230,0.15);">👨</div>
+            <div>
+              <div class="testimonial-name">Vikram Mehta</div>
+              <div class="testimonial-role">Parent of Riya, Playgroup</div>
+            </div>
+            <div class="testimonial-child">👶 Playgroup</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Our daughter learned to read at 4 years old. The phonics program here is exceptional. She's reading simple books already and loves it. Best decision we ever made."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(144,190,109,0.15);">👩</div>
+            <div>
+              <div class="testimonial-name">Pooja Joshi</div>
+              <div class="testimonial-role">Parent of Ananya, Jr. KG</div>
+            </div>
+            <div class="testimonial-child">👶 Jr. KG</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"The cleanliness, safety and care at Rainbow Roots is unmatched in Kalyan. My twins have been here for 3 years and I cannot imagine sending them anywhere else."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(251,133,0,0.15);">👨</div>
+            <div>
+              <div class="testimonial-name">Rahul & Meena Shah</div>
+              <div class="testimonial-role">Parents of Twins, Sr. KG</div>
+            </div>
+            <div class="testimonial-child">👶 Sr. KG</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars-row">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Ms. Priya knows every child by name, knows their personality, their fears and their strengths. That personal attention is what makes Rainbow Roots truly special."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(179,136,255,0.15);">👩</div>
+            <div>
+              <div class="testimonial-name">Aishwarya Nair</div>
+              <div class="testimonial-role">Parent of Dev, Nursery</div>
+            </div>
+            <div class="testimonial-child">👶 Nursery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ADMISSIONS ===================== -->
+<section id="admissions" class="section">
+  <div class="container">
+    <div class="admissions-grid">
+      <div class="reveal">
+        <div class="section-tag" style="color:var(--yellow);">Join the Family</div>
+        <h2 class="section-title" style="color:var(--white);">Admissions for 2025–26 Are Now Open</h2>
+        <p style="color:rgba(255,255,255,0.55);font-size:1rem;line-height:1.8;margin-bottom:2.5rem;">Reserve your child's seat in Kalyan's most loved preschool. Spots fill up quickly — begin your journey in just 6 simple steps.</p>
+        <div class="admission-steps">
+          <div class="admission-step">
+            <div class="admission-num">1</div>
+            <div class="admission-info">
+              <div class="admission-title">📝 Fill Enquiry Form</div>
+              <div class="admission-desc">Complete the form here or WhatsApp us. Takes under 2 minutes.</div>
+            </div>
+          </div>
+          <div class="admission-step">
+            <div class="admission-num">2</div>
+            <div class="admission-info">
+              <div class="admission-title">🏫 Book a School Visit</div>
+              <div class="admission-desc">Come see Rainbow Roots in person — we'll show you everything.</div>
+            </div>
+          </div>
+          <div class="admission-step">
+            <div class="admission-num">3</div>
+            <div class="admission-info">
+              <div class="admission-title">👩‍🏫 Meet Our Teachers</div>
+              <div class="admission-desc">A warm one-on-one meeting so your child feels comfortable from day one.</div>
+            </div>
+          </div>
+          <div class="admission-step">
+            <div class="admission-num">4</div>
+            <div class="admission-info">
+              <div class="admission-title">🎒 Trial Class</div>
+              <div class="admission-desc">A free trial class so your child can experience Rainbow Roots firsthand.</div>
+            </div>
+          </div>
+          <div class="admission-step">
+            <div class="admission-num">5</div>
+            <div class="admission-info">
+              <div class="admission-title">📋 Complete Admission</div>
+              <div class="admission-desc">Simple paperwork, fee payment and your child's spot is secured.</div>
+            </div>
+          </div>
+          <div class="admission-step">
+            <div class="admission-num">6</div>
+            <div class="admission-info">
+              <div class="admission-title">🎁 Welcome Kit</div>
+              <div class="admission-desc">A gorgeous Rainbow Roots welcome kit delivered to your home!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="admission-form-wrap">
+          <div id="admissionForm">
+            <div class="admission-form-title">Book a School Visit</div>
+            <div class="admission-form-sub">Fill out this form and we'll call you within 2 hours.</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Parent Name *</label>
+                <input type="text" class="form-input" placeholder="Your full name" id="parentName">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Child's Name *</label>
+                <input type="text" class="form-input" placeholder="Child's name" id="childName">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" id="phone">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Child's Age *</label>
+                <select class="form-select" id="age">
+                  <option value="">Select age</option>
+                  <option>1.5 – 2.5 Years (Playgroup)</option>
+                  <option>2.5 – 3.5 Years (Nursery)</option>
+                  <option>3.5 – 4.5 Years (Junior KG)</option>
+                  <option>4.5 – 6 Years (Senior KG)</option>
+                  <option>Any Age (Daycare)</option>
+                  <option>3 – 8 Years (Activity Center)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Visit Date</label>
+              <input type="date" class="form-input" id="visitDate">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message (Optional)</label>
+              <textarea class="form-textarea" placeholder="Any questions or special requests..." id="message"></textarea>
+            </div>
+            <button class="form-submit" onclick="submitForm()">🎉 Book My School Visit</button>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">🎊</div>
+            <h3>You're on Your Way!</h3>
+            <p>Thank you! Our admissions team will call you within 2 hours to confirm your school visit. We can't wait to welcome your little one!</p>
+            <a href="https://wa.me/919999999999" target="_blank" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;">💬 WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Got Questions?</div>
+      <h2 class="section-title">Everything Parents Ask Us</h2>
+      <p class="section-sub">We know choosing a preschool is one of the most important decisions you'll make. Here are honest answers to the questions we hear most.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What age groups does Rainbow Roots accept?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We welcome children from 1.5 years to 8 years old across our Playgroup, Nursery, Junior KG, Senior KG, Daycare and Activity Center programs. Each program is carefully designed for that specific developmental stage.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do you ensure my child's safety?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Safety is our highest priority. We have 24/7 CCTV monitoring of the entire campus, a secure entry system where only authorized adults can collect children, first aid trained staff in every classroom, daily sanitization and a full-time security guard. Parents receive real-time notifications for attendance and pickup.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What is the teacher-to-child ratio?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We maintain a maximum ratio of 1 teacher to 12 children for Playgroup and Nursery, and 1:15 for KG classes. This small batch size ensures every child receives the individual attention and care they deserve.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do you offer a free trial class?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We offer a complimentary trial class for every prospective student. We believe your child should love Rainbow Roots before you commit. Simply book a school visit and we'll arrange a trial class as part of the process.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What curriculum does Rainbow Roots follow?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We follow an internationally inspired, activity-based learning curriculum that blends play-based pedagogy with structured academics. Our approach is rooted in research on early childhood development and is designed specifically for Indian children and cultural contexts.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-5">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What are your timings and fees?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Our school hours are Monday to Saturday, 7:30 AM to 1:30 PM for the main programs, with extended daycare available until 7:00 PM. For detailed fee structure and admission packages, please contact us directly — we're happy to walk you through all options.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do you keep parents updated?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We use a parent communication app where you receive daily attendance updates, meal reports, photos and activity updates throughout the day. Teachers also send personal updates and parents can message teachers directly. We also have WhatsApp group updates and monthly parent-teacher meetings.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Where exactly is Rainbow Roots located?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We're located at Ground Floor, Pehelwan Chowk, Triveni Bliss, 10 Umbarde Road, Opposite Triveni Classic, Chanakya Nagar, Khadakpada, Kalyan, Maharashtra – 421301. Easily accessible by road, with parking available nearby.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <div class="section-tag">Get in Touch</div>
+      <h2 class="section-title">We'd Love to Hear From You</h2>
+      <p class="section-sub">Whether you have a question, want to book a visit, or just want to say hello — our team is always happy to help.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-title">Address</div>
+              <div class="contact-item-val">Rainbow Roots Preschool</div>
+              <div class="contact-item-sub">GF, Triveni Bliss, 10 Umbarde Rd, Opp Triveni Classic,<br>Chanakya Nagar, Khadakpada, Kalyan – 421301</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <div class="contact-item-title">WhatsApp</div>
+              <div class="contact-item-val">+91 99999 99999</div>
+              <div class="contact-item-sub">Chat with us anytime — we respond within 30 minutes</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-title">Call Us</div>
+              <div class="contact-item-val">+91 99999 99999</div>
+              <div class="contact-item-sub">Mon–Sat, 7:30 AM – 7:00 PM</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-title">Email</div>
+              <div class="contact-item-val">hello@rainbowroots.in</div>
+              <div class="contact-item-sub">We reply within 24 hours</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-hours" style="margin-top:1.5rem;">
+          <div class="contact-hours-title">⏰ School Hours</div>
+          <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-open">7:30 AM – 7:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-open">7:30 AM – 2:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Sunday</span><span style="color:var(--mid);">Closed</span></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-map">
+          <div class="contact-map-overlay">
+            <div style="font-size:3rem;">📍</div>
+            <div style="font-family:var(--font-head);font-size:0.9rem;font-weight:700;color:white;text-align:center;">Rainbow Roots Preschool<br><span style="font-size:0.75rem;font-weight:400;opacity:0.8;">Khadakpada, Kalyan</span></div>
+            <a href="https://maps.google.com/?q=Triveni+Bliss+Umbarde+Road+Kalyan" target="_blank" class="contact-map-btn">🗺️ Open in Google Maps</a>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;display:flex;gap:1rem;">
+          <a href="https://wa.me/919999999999" target="_blank" class="btn-whatsapp" style="flex:1;justify-content:center;">💬 WhatsApp Now</a>
+          <a href="tel:+919999999999" class="btn-primary" style="flex:1;justify-content:center;">📞 Call Now</a>
+        </div>
+        <div style="margin-top:1.5rem;background:linear-gradient(135deg,rgba(255,183,3,0.08),rgba(251,133,0,0.08));border:1px solid rgba(255,183,3,0.2);border-radius:var(--radius-md);padding:1.5rem;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">📅</div>
+          <div style="font-family:var(--font-head);font-size:1rem;font-weight:800;color:var(--dark);margin-bottom:0.3rem;">Book a School Visit Today</div>
+          <div style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">See Rainbow Roots in person — your child will fall in love instantly.</div>
+          <a href="#admissions" class="btn-primary" style="display:inline-flex;">🎉 Reserve a Visit Slot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Rainbow <span>Roots</span> 🌈</div>
+      <p class="footer-desc">A premium preschool, daycare and activity center in Kalyan where every child is celebrated, nurtured and guided to become the best version of themselves.</p>
+      <div class="footer-socials">
+        <div class="social-btn" title="Facebook">f</div>
+        <div class="social-btn" title="Instagram">📷</div>
+        <div class="social-btn" title="YouTube">▶</div>
+        <div class="social-btn" title="WhatsApp">💬</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Programs</div>
+      <div class="footer-links">
+        <a href="#programs" class="footer-link">Playgroup</a>
+        <a href="#programs" class="footer-link">Nursery</a>
+        <a href="#programs" class="footer-link">Junior KG</a>
+        <a href="#programs" class="footer-link">Senior KG</a>
+        <a href="#programs" class="footer-link">Daycare</a>
+        <a href="#programs" class="footer-link">Activity Center</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="#about" class="footer-link">About Us</a>
+        <a href="#teachers" class="footer-link">Our Teachers</a>
+        <a href="#facilities" class="footer-link">Facilities</a>
+        <a href="#gallery" class="footer-link">Gallery</a>
+        <a href="#admissions" class="footer-link">Admissions</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <div class="footer-col-title">Stay Connected</div>
+      <p class="newsletter-desc">Get parenting tips, activity ideas and school news delivered monthly.</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Your email address">
+        <button class="newsletter-btn">→</button>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <div class="footer-col-title" style="margin-bottom:0.8rem;">Visit Us</div>
+        <p class="newsletter-desc" style="line-height:1.7;">GF, Triveni Bliss, 10 Umbarde Rd,<br>Chanakya Nagar, Khadakpada,<br>Kalyan, Maharashtra – 421301</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Rainbow Roots Preschool. All rights reserved.</span>
+    <span>Made with ❤️ for the children of Kalyan</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<!-- ===================== FLOATING BUTTONS ===================== -->
+<div class="fab-group">
+  <a href="https://wa.me/919999999999" target="_blank" class="fab fab-wa" title="WhatsApp">
+    💬
+    <span class="fab-tooltip">WhatsApp Us</span>
+  </a>
+  <a href="tel:+919999999999" class="fab fab-call" title="Call">
+    📞
+    <span class="fab-tooltip">Call Now</span>
+  </a>
+  <button class="fab fab-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+    <span class="fab-tooltip">Back to Top</span>
+  </button>
+</div>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-sticky">
+  <a href="tel:+919999999999" class="mobile-sticky-btn">
+    <span class="mobile-sticky-icon">📞</span>
+    <span class="mobile-sticky-label">Call</span>
+  </a>
+  <a href="https://wa.me/919999999999" target="_blank" class="mobile-sticky-btn">
+    <span class="mobile-sticky-icon">💬</span>
+    <span class="mobile-sticky-label">WhatsApp</span>
+  </a>
+  <a href="#admissions" class="mobile-sticky-btn">
+    <span class="mobile-sticky-icon">🎓</span>
+    <span class="mobile-sticky-label">Admissions</span>
+  </a>
+  <a href="https://maps.google.com/?q=Triveni+Bliss+Umbarde+Road+Kalyan" target="_blank" class="mobile-sticky-btn">
+    <span class="mobile-sticky-icon">📍</span>
+    <span class="mobile-sticky-label">Directions</span>
+  </a>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+// ============================================================
+// LOADER
+// ============================================================
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 1800);
+});
+
+// ============================================================
+// STARS GENERATION
+// ============================================================
+const starsEl = document.getElementById('stars');
+for(let i = 0; i < 80; i++){
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 3 + 1;
+  star.style.cssText = `
+    width:${size}px; height:${size}px;
+    top:${Math.random()*70}%;
+    left:${Math.random()*100}%;
+    --dur:${2 + Math.random()*3}s;
+    animation-delay:${Math.random()*4}s;
+  `;
+  starsEl.appendChild(star);
+}
+
+// ============================================================
+// CLOUDS GENERATION
+// ============================================================
+const cloudsEl = document.getElementById('clouds');
+for(let i = 0; i < 5; i++){
+  const cloud = document.createElement('div');
+  cloud.className = 'cloud';
+  const w = 120 + Math.random() * 200;
+  const h = 40 + Math.random() * 40;
+  cloud.style.cssText = `
+    width:${w}px; height:${h}px;
+    top:${10 + Math.random()*40}%;
+    animation-duration:${25 + Math.random()*20}s;
+    animation-delay:${-Math.random()*25}s;
+    opacity:${0.3 + Math.random()*0.4};
+  `;
+  cloudsEl.appendChild(cloud);
+}
+
+// ============================================================
+// SCROLL PROGRESS
+// ============================================================
+window.addEventListener('scroll', () => {
+  const progress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-progress').style.width = progress + '%';
+
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+
+  // Back to top
+  document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+});
+
+// ============================================================
+// MOBILE NAV
+// ============================================================
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// ============================================================
+// SCROLL REVEAL
+// ============================================================
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ============================================================
+// STATS COUNTER
+// ============================================================
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !entry.target.dataset.counted) {
+      entry.target.dataset.counted = true;
+      const target = parseInt(entry.target.dataset.target);
+      const suffix = target > 90 ? '%' : target === 50 ? '+' : target >= 500 ? '+' : '+';
+      let current = 0;
+      const step = target / 60;
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        entry.target.textContent = Math.floor(current) + suffix;
+        if(current >= target) clearInterval(interval);
+      }, 25);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => statsObserver.observe(el));
+
+// ============================================================
+// FAQ ACCORDION
+// ============================================================
+function toggleFaq(questionEl) {
+  const item = questionEl.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ============================================================
+// FORM SUBMIT
+// ============================================================
+function submitForm() {
+  const parentName = document.getElementById('parentName').value;
+  const phone = document.getElementById('phone').value;
+  const age = document.getElementById('age').value;
+
+  if(!parentName || !phone || !age) {
+    alert('Please fill in at least your name, phone number and child\'s age.');
+    return;
+  }
+
+  // Confetti
+  launchConfetti();
+
+  document.getElementById('admissionForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+}
+
+// ============================================================
+// CONFETTI
+// ============================================================
+function launchConfetti() {
+  const colors = ['#FFB703','#8ECAE6','#90BE6D','#FB8500','#f48fb1','#b388ff'];
+  for(let i = 0; i < 80; i++){
+    setTimeout(() => {
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.cssText = `
+        left:${Math.random()*100}vw;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        transform:rotate(${Math.random()*360}deg);
+        animation-duration:${2 + Math.random()*2}s;
+        animation-delay:${Math.random()*0.5}s;
+        width:${6+Math.random()*10}px;
+        height:${6+Math.random()*10}px;
+        border-radius:${Math.random() > 0.5 ? '50%' : '2px'};
+      `;
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 4000);
+    }, Math.random() * 400);
+  }
+}
+
+// ============================================================
+// GALLERY FILTER
+// ============================================================
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.gallery-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if(cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = 'block';
+      item.style.opacity = '0';
+      setTimeout(() => item.style.opacity = '1', 50);
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// ============================================================
+// SMOOTH HOVER PARALLAX ON HERO
+// ============================================================
+document.getElementById('hero').addEventListener('mousemove', (e) => {
+  const rect = e.target.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width - 0.5;
+  const y = (e.clientY - rect.top) / rect.height - 0.5;
+  document.querySelectorAll('.abc-block').forEach((block, i) => {
+    const factor = (i % 2 === 0 ? 1 : -1) * (i + 1) * 3;
+    block.style.transform = `translateX(${x * factor}px) translateY(${y * factor}px)`;
+  });
+});
+
+// ============================================================
+// RIPPLE EFFECT ON BUTTONS
+// ============================================================
+document.querySelectorAll('.btn-primary, .btn-ghost, .btn-whatsapp').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const ripple = document.createElement('span');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.cssText = `
+      position:absolute;
+      width:${size}px; height:${size}px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.3);
+      top:${e.clientY - rect.top - size/2}px;
+      left:${e.clientX - rect.left - size/2}px;
+      transform:scale(0);
+      animation:ripple-expand 0.6s ease-out forwards;
+      pointer-events:none;
+    `;
+    this.style.position = 'relative';
+    this.style.overflow = 'hidden';
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 700);
+  });
+});
+
+const style = document.createElement('style');
+style.textContent = `@keyframes ripple-expand { to { transform:scale(2); opacity:0; } }`;
+document.head.appendChild(style);
+
+// ============================================================
+// GALLERY ITEMS TRANSITION
+// ============================================================
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+});
+</script>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Preschool",
+  "name": "Rainbow Roots Preschool, Daycare & Activity Center",
+  "description": "A premium preschool, daycare and activity center in Kalyan, Maharashtra for children aged 1.5 to 8 years.",
+  "url": "https://rainbowroots.in",
+  "telephone": "+91-99999-99999",
+  "email": "hello@rainbowroots.in",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ground Floor, Pehelwan Chowk, Triveni Bliss, 10 Umbarde Rd, Opp. Triveni Classic, Chanakya Nagar",
+    "addressLocality": "Khadakpada, Kalyan",
+    "addressRegion": "Maharashtra",
+    "postalCode": "421301",
+    "addressCountry": "IN"
+  },
+  "openingHours": ["Mo-Fr 07:30-19:00", "Sa 07:30-14:00"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "200"
+  }
+}
+</script>
+</body>
+</html>
